@@ -19,17 +19,19 @@ def Prime_number(Min, Max):
 				break
 		if count == 0:
 			word.append(i)
-			print "%d" % i
+			#print "%d" % i
 	return word
 
 Min = int(raw_input("The min number is :"))
 Max = int(raw_input("The max number is :"))
 
 word = Prime_number(Min, Max)
-print word
 
 File = open(filename, 'w')
 
-File.writelines(str(word))
+for i in word:
+	File.writelines(str(i) + ',')
+
+File.writelines('\n')
 
 File.close()
